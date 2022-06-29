@@ -113,3 +113,32 @@ article p {
     max-width: 90%;
     font-size: 17px;
 }
+.content .actions {
+    width: min(var(--max-width-per), var(--max-width));
+    margin: 0 auto;
+}
+
+.btn {
+    border: none;
+    background: none;
+    outline: none;
+    font-weight: bold;
+    padding: .5em 1.5em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-netflix {
+    background-color: #C50606;
+    color: #fff;
+    border: 2.9px solid #C50606;
+    margin-right: 12px;
+}
+
+.btn-gallery {
+    border: 2px solid #fff;
+    color: #fff;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
