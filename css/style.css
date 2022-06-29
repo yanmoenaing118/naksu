@@ -41,6 +41,7 @@ body {
     font-family: Nunito;
     color: #fff;
     letter-spacing: 1px;
+    max-height: 100vh;
 }
 
 img {
@@ -126,6 +127,7 @@ article p {
     padding: .5em 1.5em;
     border-radius: 2px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-netflix {

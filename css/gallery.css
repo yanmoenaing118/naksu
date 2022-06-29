@@ -1,0 +1,92 @@
+:root {
+  --max-width: 680px;
+  --max-width-per: 90%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Medium.woff2") format("woff2"),
+    url("/fonts/Nunito-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Regular.woff2") format("woff2"),
+    url("/fonts/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Bold.woff2") format("woff2"),
+    url("/fonts/Nunito-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: Nunito;
+  color: #fff;
+  letter-spacing: 1px;
+  background-color: #000;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  height: 100px;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.header h1 {
+  font-size: 18px;
+  width: min(var(--max-width-per), var(--max-width));
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.gallery {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  width: min(var(--max-width-per), var(--max-width));
+  margin: 0 auto;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.6) 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,1)   );
+}
