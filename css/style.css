@@ -1,0 +1,115 @@
+:root {
+    --max-width: 680px;
+    --max-width-per: 90%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito-Medium.woff2') format('woff2'),
+        url('/fonts/Nunito-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito-Regular.woff2') format('woff2'),
+        url('/fonts/Nunito-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito-Bold.woff2') format('woff2'),
+        url('/fonts/Nunito-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Nunito;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper-img {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.content {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.6) 10%,
+        rgba(0,0,0,0.4)
+);
+}
+
+.header {
+    height: 100px;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.8) 30%,
+        rgba(0,0,0,0.6) 60%,
+        rgba(0,0,0,0)
+);
+}
+
+.header h1 {
+    font-size: 18px;
+    width: min(var(--max-width-per), var(--max-width));
+    margin: 0 auto;
+   padding-top: 1rem;
+}
+
+.content article {
+    width: min(var(--max-width-per), var(--max-width));
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+article h1 {
+    font-size: 29px;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-shadow: -1px 4px 6px rgba(0,0,0,0.94);
+}
+
+
+article h1 span {
+    color: #E03232;
+}
+article p {
+    line-height: 1.7;
+    max-width: 90%;
+    font-size: 17px;
+}
