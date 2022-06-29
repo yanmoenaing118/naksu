@@ -79,6 +79,12 @@ img {
 .gallery {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+  padding-bottom: 400px;
+}
+
+.gallery > .gallery-img {
+    scroll-snap-align: start;
 }
 
 
