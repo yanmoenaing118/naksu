@@ -145,3 +145,9 @@ article p {
     gap: 10px;
     align-items: center;
 }
+
+@media screen and (min-width: 768px) {
+    .content article {
+        padding: 7rem 0;
+    }
+}
