@@ -77,16 +77,22 @@ img {
 }
 
 .gallery {
+  scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-snap-type: y mandatory;
   padding-bottom: 400px;
 }
 
-.gallery > .gallery-img {
+.gallery-img {
     scroll-snap-align: start;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
+.show {
+  opacity: 1;
+}
 
 .actions {
     position: absolute;
