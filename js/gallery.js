@@ -14,6 +14,7 @@ function start() {
 
   up.addEventListener("click", () => handleNavigation("up"));
   down.addEventListener("click", () => handleNavigation("down"));
+  
 
   function handleNavigation(dir) {
     if (activeIndex > gallerImages.length || activeIndex < 0) return;
@@ -27,6 +28,23 @@ function start() {
       gallery.scrollBy(0, scrollBy);
       activeIndex = Math.max(0, activeIndex - 1);
     }
+  }
+
+  function handleKeydown() {
+    switch (e.keyCode) {
+      case 37:
+          str = 'Left Key pressed!';
+          break;
+      case 38:
+          str = 'Up Key pressed!';
+          break;
+      case 39:
+          str = 'Right Key pressed!';
+          break;
+      case 40:
+          str = 'Down Key pressed!';
+          break;
+  }
   }
 
   function observerCallback(entries) {

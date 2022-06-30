@@ -1,153 +1,242 @@
 :root {
-    --max-width: 680px;
-    --max-width-per: 90%;
+  --max-width: 680px;
+  --max-width-per: 90%;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-@font-face {
-    font-family: 'Nunito';
-    src: url('/fonts/Nunito-Medium.woff2') format('woff2'),
-        url('/fonts/Nunito-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Nunito';
-    src: url('/fonts/Nunito-Regular.woff2') format('woff2'),
-        url('/fonts/Nunito-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Medium.woff2") format("woff2"),
+    url("/fonts/Nunito-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Nunito';
-    src: url('/fonts/Nunito-Bold.woff2') format('woff2'),
-        url('/fonts/Nunito-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Regular.woff2") format("woff2"),
+    url("/fonts/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Bold.woff2") format("woff2"),
+    url("/fonts/Nunito-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-    font-family: Nunito;
-    color: #fff;
-    letter-spacing: 1px;
-    max-height: 100vh;
-    overflow: hidden;
+  font-family: Nunito;
+  color: #fff;
+  letter-spacing: 1px;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .wrapper-img {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .wrapper-img img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-
 .content {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    background-image: linear-gradient(
-        rgba(0,0,0,0.6) 10%,
-        rgba(0,0,0,0.4)
-);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0.4));
 }
 
 .header {
-    height: 100px;
-    background-image: linear-gradient(
-        rgba(0,0,0,0.8) 30%,
-        rgba(0,0,0,0.6) 60%,
-        rgba(0,0,0,0)
-);
+  height: 100px;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .header h1 {
-    font-size: 18px;
-    width: min(var(--max-width-per), var(--max-width));
-    margin: 0 auto;
-   padding-top: 1rem;
+  font-size: 18px;
+  width: min(var(--max-width-per), var(--max-width));
+  margin: 0 auto;
+  padding-top: 1rem;
 }
 
 .content article {
-    width: min(var(--max-width-per), var(--max-width));
-    margin: 0 auto;
-    padding: 5rem 0;
+  width: min(var(--max-width-per), var(--max-width));
+  margin: 0 auto;
+  padding: 5rem 0;
 }
 
 article h1 {
-    font-size: 29px;
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    text-shadow: -1px 4px 6px rgba(0,0,0,0.94);
+  font-size: 29px;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  text-shadow: -1px 4px 6px rgba(0, 0, 0, 0.94);
 }
-
 
 article h1 span {
-    color: #E03232;
+  color: #e03232;
 }
 article p {
-    line-height: 1.7;
-    max-width: 90%;
-    font-size: 17px;
+  line-height: 1.7;
+  max-width: 90%;
+  font-size: 17px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: showPara 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
+
+@keyframes showPara {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 .content .actions {
-    width: min(var(--max-width-per), var(--max-width));
-    margin: 0 auto;
+  width: min(var(--max-width-per), var(--max-width));
+  margin: 0 auto;
 }
 
 .btn {
-    border: none;
-    background: none;
-    outline: none;
-    font-weight: bold;
-    padding: .4em 1em;
-    border-radius: 2px;
-    cursor: pointer;
-    text-decoration: none;
+  border: none;
+  background: none;
+  outline: none;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-netflix {
-    background-color: #C50606;
-    color: #fff;
-    border: 2.9px solid #C50606;
-    margin-right: 12px;
+  background-color: #c50606;
+  color: #fff;
+  border: 2.9px solid #c50606;
+  margin-right: 12px;
 }
 
 .btn-gallery {
-    border: 2px solid #fff;
-    color: #fff;
-    display: inline-flex;
-    gap: 10px;
-    align-items: center;
+  border: 2px solid #fff;
+  color: #fff;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
-    .content article {
-        padding: 7rem 0;
-    }
+  .content article {
+    padding: 7rem 0;
+  }
+}
+
+.typing .text {
+  max-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(var(--characters));
+
+  animation-fill-mode: forwards;
+}
+.typing .text span {
+  color: #e03232;
+  font-weight: bold;
+}
+
+@keyframes typing {
+  75%,
+  100% {
+    max-width: calc(var(--characters) * 1ch);
+  }
+}
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+.play {
+  border: none;
+  background: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 8;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.video video {
+  margin-top: -100px;
+  margin-bottom: -100px;
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.video .close-video {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 13;
+}
+
+button {
+    cursor: pointer;
 }
