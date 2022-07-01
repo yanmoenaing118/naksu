@@ -74,11 +74,9 @@ img {
 
 .header {
   height: 100px;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.8) 30%,
-    rgba(0, 0, 0, 0.6) 60%,
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.6) 60%,
+      rgba(0, 0, 0, 0));
 }
 
 .header h1 {
@@ -104,6 +102,7 @@ article h1 {
 article h1 span {
   color: #e03232;
 }
+
 article p {
   line-height: 1.7;
   max-width: 90%;
@@ -167,23 +166,28 @@ article p {
 
   animation-fill-mode: forwards;
 }
+
 .typing .text span {
   color: #e03232;
   font-weight: bold;
 }
 
 @keyframes typing {
+
   75%,
   100% {
     max-width: calc(var(--characters) * 1ch);
   }
 }
+
 @keyframes blink {
+
   0%,
   75%,
   100% {
     opacity: 1;
   }
+
   25% {
     opacity: 0;
   }
@@ -204,14 +208,12 @@ article p {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 12;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: scale(0);
   overflow: hidden;
-  transition: all .3s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .video video {
@@ -225,18 +227,18 @@ article p {
 }
 
 .video .close-video {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border: none;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 13;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 13;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }

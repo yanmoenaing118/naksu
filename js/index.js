@@ -12,26 +12,35 @@ window.onload = () => {
   const video = document.querySelector("video");
 
   playBtn.addEventListener("click", (e) => {
-
-
-    videoContainer.style.transform = "scale(1)";
-    videoContainer.style.opacity = 1;
-    
-    video.play();
-
+    sequence(() => {
+      videoContainer.style.zIndex = 12;
+    }).then(() =>
+      sequence(() => {
+        videoContainer.style.opacity = 1;
+        video.play();
+      })
+    );
   });
 
-  console.log(closeBtn);
-
-  closeBtn.addEventListener("click", e => {
-    console.log("click")
-    videoContainer.style.transform = "scale(0)";
-    videoContainer.style.opacity = 0;
-    
+  closeBtn.addEventListener("click", (e) => {
     video.pause();
 
-  })
-
-
+    sequence(() => {
+      videoContainer.style.opacity = 0;
+    }).then(() =>
+      sequence(() => {
+        videoContainer.style.zIndex = 5;
+      })
+    );
+  });
 };
+
+function sequence(cb) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      cb();
+      resolve();
+    }, 0);
+  });
+}
 
