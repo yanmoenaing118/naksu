@@ -29,7 +29,7 @@ window.onload = () => {
       videoContainer.style.opacity = 0;
     }).then(() =>
       sequence(() => {
-        videoContainer.style.zIndex = 5;
+        videoContainer.style.zIndex = -5;
       })
     );
   });
