@@ -38,87 +38,23 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  if(event.request.headers.get('range')) {
-
-    
-
-  }else{
-    event.respondWith(
-      (async () => {
-        const responseFromCache = await caches.match(event.request.url);
-        if (responseFromCache) {
-          return responseFromCache;
-        }
-        const responseFromNetwork = await fetch(event.request.url);
-        if (responseFromNetwork) {
-          await caches
-            .open(cacheVersion)
-            .then((cache) =>
-              cache.put(event.request.url, responseFromNetwork.clone())
-            );
-          return responseFromNetwork;
-        }
-  
-        return new Response("Not in cache or network is not available");
-      })()
-    );
-  }
-  
-});
-
-async function handleVideoResponse(event) {
-
-
   event.respondWith(
     (async () => {
-      const fromCache = await caches.open(cacheVersion).then( cache => cache.match(event.request.url));
-      let buffer;
-      if(!fromCache) {
-        const fromNetwork = await fetch(event.request);
-         buffer = await fromNetwork.arrayBuffer();
-      } else {
-        buffer = await fromCache.arrayBuffer();
+      const responseFromCache = await caches.match(event.request.url);
+      if (responseFromCache) {
+        return responseFromCache;
+      }
+      const responseFromNetwork = await fetch(event.request.url);
+      if (responseFromNetwork) {
+        await caches
+          .open(cacheVersion)
+          .then((cache) =>
+            cache.put(event.request.url, responseFromNetwork.clone())
+          );
+        return responseFromNetwork;
       }
 
-      return new Response(ab.slice(pos), {
-        status: 206,
-        statusText: "Partial Content",
-        headers: [
-          ["Content-Type", "video/mp4"],
-          [
-            "Content-Range",
-            "bytes " + pos + "-" + (ab.byteLength - 1) + "/" + ab.byteLength,
-          ],
-        ],
-      });
+      return new Response("Not in cache or network is not available");
     })()
   );
-}
-
-
-caches
-      .open(cacheVersion)
-      .then(function (cache) {
-        return cache.match(event.request.url);
-      })
-      .then(function (res) {
-        if (!res) {
-          return fetch(event.request).then((res) => {
-            return res.arrayBuffer();
-          });
-        }
-        return res.arrayBuffer();
-      })
-      .then(function (ab) {
-        return new Response(ab.slice(pos), {
-          status: 206,
-          statusText: "Partial Content",
-          headers: [
-            ["Content-Type", "video/mp4"],
-            [
-              "Content-Range",
-              "bytes " + pos + "-" + (ab.byteLength - 1) + "/" + ab.byteLength,
-            ],
-          ],
-        });
-      })
+});
