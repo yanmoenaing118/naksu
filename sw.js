@@ -16,6 +16,8 @@ self.addEventListener("install", (event) => {
           "/images/naksu-6.png",
           "/images/naksu-7.png",
           "/images/naksu-8.png",
+          "/css/style.css",
+          "/js/index.js"
         ])
       )
   );
