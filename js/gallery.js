@@ -1,6 +1,9 @@
 window.onload = start;
 
 console.log("v0.01 changes");
+console.log("i love you");
+
+console.log("Hi what is your name?")
 function start() {
   const up = document.getElementById("up");
   const down = document.getElementById("down");
