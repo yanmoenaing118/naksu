@@ -9,3 +9,6 @@ if("serviceWorker" in navigator) {
     })
 
 }
+
+console.log("HI github")
+console.log("update from github on v0.01 branch")
