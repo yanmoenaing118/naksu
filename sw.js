@@ -1,6 +1,8 @@
 const version = 3;
 const cacheVersion = `version-${version}`;
 
+console.log("")
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches

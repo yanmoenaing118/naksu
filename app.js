@@ -5,7 +5,7 @@ if("serviceWorker" in navigator) {
         console.log("Service worker registered")
     })
     .catch(() => {
-        console.log("Failed to register service worker")
+        console.log("replace by v0.0.1");
     })
 
 }
