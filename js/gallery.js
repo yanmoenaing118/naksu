@@ -1,5 +1,6 @@
 window.onload = start;
 
+console.log("v0.01 changes");
 function start() {
   const up = document.getElementById("up");
   const down = document.getElementById("down");
