@@ -1,6 +1,7 @@
 window.onload = start;
 
 console.log("v0.01 changes");
+console.log("i love you")
 function start() {
   const up = document.getElementById("up");
   const down = document.getElementById("down");
