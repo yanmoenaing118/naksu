@@ -1,10 +1,5 @@
 window.onload = start;
 
-console.log("v0.01 changes");
-console.log("i love you");
-
-console.log("Hi what is your name?")
-console.log("HI v0.01 lfdslfsd;faf")
 function start() {
   const up = document.getElementById("up");
   const down = document.getElementById("down");
@@ -35,19 +30,21 @@ function start() {
     }
   }
 
+  window.addEventListener("keydown", handleKeydown);
+
   function handleKeydown() {
     switch (e.keyCode) {
       case 37:
           str = 'Left Key pressed!';
           break;
       case 38:
-          str = 'Up Key pressed!';
+          str = handleNavigation("up");
           break;
       case 39:
           str = 'Right Key pressed!';
           break;
       case 40:
-          str = 'Down Key pressed!';
+          str = handleNavigation('down');
           break;
   }
   }
